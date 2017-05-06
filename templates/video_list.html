@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <ul class="list-group">
+        {% for item in videos %}
+            <li class="list-group-item"><a href="/video/{{ item.id }}">{{ loop.index }}. {{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    {% if page_size and video_count > page_size %}
+        <a href="/videos/{{ video.id }}/{{ page }}">Show more</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ video.title }}{% endblock %}
+{% block body %}
+    <h1>{{ video.title }}</h1>
+    {{ video.description }}
+    <br><br>
+    <h3>Related videos</h3>
+    <ul class="list-group">
+        {% for item in videos %}
+            <li class="list-group-item"><a href="/video/{{ item.id }}">{{ loop.index }}. {{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if video_count > page_size %}
+        <a href="/videos/{{ video.id }}/1">Show more</a>
+    {% endif %}
+{% endblock %}
