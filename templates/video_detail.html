@@ -11,7 +11,7 @@
             <li class="list-group-item"><a href="/video/{{ item.id }}">{{ loop.index }}. {{ item.title }}</a></li>
         {% endfor %}
     </ul>
-    {% if video_count > page_size %}
+    {% if total_videos > page_size %}
         <a href="/videos/{{ video.id }}/1">Show more</a>
     {% endif %}
 {% endblock %}
